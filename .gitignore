@@ -16,7 +16,6 @@
 # Folders
 *WS2812.cydsn/Export/
 *WS2812.cydsn/codegentemp/
-*WS2812.cydsn/CoretexM3/
-*WS2812.cydsn/CoretexM0/
+*WS2812.cydsn/CortexM*
 *WS2812.cydsn/Debug/
 *WS2812.cydsn/Generated_Source/
