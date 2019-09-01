@@ -17,6 +17,13 @@
 #include "`$INSTANCE_NAME`_defs.h"
 
 
+/******************************************************************************
+ *
+ *  Initialises and enables the component.
+ *
+ *  Has to be called before the component is used.
+ *
+ *****************************************************************************/
 void `$INSTANCE_NAME`_Start()
 {
     // Enter Critical Section
@@ -35,14 +42,30 @@ void `$INSTANCE_NAME`_Start()
     CyExitCriticalSection(interruptState);
     
     `$INSTANCE_NAME`_Reset_Timer_Start();
+    
+    // Enable relevant interrupts
+    `$INSTANCE_NAME`_StatusIntReg_InterruptEnable();
 }
 
-void `$INSTANCE_NAME`_InsertPixel(uint32 color)
+/******************************************************************************
+ *
+ *  Instructs the first connected pixel to assume a given color
+ *
+ *****************************************************************************/
+void `$INSTANCE_NAME`_PutPixel(uint32 color, uint32 fifoNum)
 {
-    CY_SET_REG8(`$INSTANCE_NAME`_Datapath_F0_PTR, (uint8)(color & 0xff));
+    reg8* datapath_ptr;
+    if (fifoNum) {
+        datapath_ptr = `$INSTANCE_NAME`_Datapath_F1_PTR;
+    } else {
+        datapath_ptr = `$INSTANCE_NAME`_Datapath_F0_PTR;
+    }
+    
+    CY_SET_REG8(datapath_ptr, (uint8)(color & 0xff));
     color >>= 8;
-    CY_SET_REG8(`$INSTANCE_NAME`_Datapath_F0_PTR, (uint8)(color & 0xff));
+    CY_SET_REG8(datapath_ptr, (uint8)(color & 0xff));
     color >>= 8;
-    CY_SET_REG8(`$INSTANCE_NAME`_Datapath_F0_PTR, (uint8)(color & 0xff));
+    CY_SET_REG8(datapath_ptr, (uint8)(color & 0xff));
 }
+
 /* [] END OF FILE */

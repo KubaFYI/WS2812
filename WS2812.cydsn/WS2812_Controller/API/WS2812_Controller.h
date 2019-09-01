@@ -20,6 +20,8 @@
     #include "cyfitter.h"
     
     void `$INSTANCE_NAME`_Start(void);
-    void `$INSTANCE_NAME`_InsertPixel(uint32 color);
+    void `$INSTANCE_NAME`_PutFirstPixel(uint32 color);
+    void `$INSTANCE_NAME`_PutPixelArray(uint32* colors, uint32 num);
+    uint32 `$INSTANCE_NAME`_Idle();
 #endif
 /* [] END OF FILE */

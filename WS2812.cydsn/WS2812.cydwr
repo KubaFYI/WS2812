@@ -11,15 +11,19 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Pin">
+      <Data key="1f56527f-e2e9-4468-a097-59fdec67de97" value="Pin_3" />
+      <Data key="4f1bbc06-61e2-4ed1-8bd8-efff658f3ab9" value="Pin_1" />
       <Data key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba" value="Pin_SW" />
       <Data key="21c44b9e-72e6-46b0-b13f-6d05679e70a3" value="Pin_1_5" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/23b8206d-1c77-4e61-be4a-b4037d5de5fc" value="UART_tx" />
       <Data key="43ec2fa1-bf22-4b71-9477-b6ca7b97f0b0/78e33e5d-45ea-4b75-88d5-73274e8a7ce4" value="UART_rx" />
+      <Data key="5306b847-205c-44a5-9374-2abd3fa37612" value="Pin_2" />
       <Data key="420531ad-d646-46fe-9f3c-86d49f41c2f2" value="Pin_SM" />
       <Data key="1425177d-0d0e-4468-8bcc-e638e5509a9b" value="Rx_1" />
       <Data key="c45e34c9-fc86-4171-9a61-b24877f8f84b" value="Pin_AUX" />
       <Data key="e851a3b9-efb8-48be-bbb8-b303b216c393" value="Pin_Out" />
       <Data key="ed092b9b-d398-4703-be89-cebf998501f6" value="Tx_1" />
+      <Data key="fc758927-9be6-42d2-94a9-bc5457b0bfe6" value="Pin_4" />
     </Group>
   </Group>
   <Group key="FlashSecurity">
@@ -1229,9 +1233,24 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="1f56527f-e2e9-4468-a097-59fdec67de97">
+      <Group key="0">
+        <Data key="Port Format" value="0,5" />
+      </Group>
+    </Group>
+    <Group key="4f1bbc06-61e2-4ed1-8bd8-efff658f3ab9">
+      <Group key="0">
+        <Data key="Port Format" value="0,3" />
+      </Group>
+    </Group>
     <Group key="8d318d8b-cf7b-4b6b-b02c-ab1c5c49d0ba">
       <Group key="0">
         <Data key="Port Format" value="0,7" />
+      </Group>
+    </Group>
+    <Group key="5306b847-205c-44a5-9374-2abd3fa37612">
+      <Group key="0">
+        <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
     <Group key="420531ad-d646-46fe-9f3c-86d49f41c2f2">
@@ -1258,6 +1277,11 @@
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
         <Data key="Port Format" value="0,0" />
+      </Group>
+    </Group>
+    <Group key="fc758927-9be6-42d2-94a9-bc5457b0bfe6">
+      <Group key="0">
+        <Data key="Port Format" value="0,6" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins">

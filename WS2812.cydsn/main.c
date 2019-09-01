@@ -20,8 +20,11 @@ int main(void)
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     CyDelay(1000);
     WS2812_Controller_1_Start();
-    uint32 color = 0x123456;
-    WS2812_Controller_1_InsertPixel(color);
+    uint32 colors[] = {0x123456, 0x789abc, 0x0};
+    colors[0] = 0x0;
+    colors[1] = 0xffffff;
+    colors[1] = 0x555555;
+    WS2812_Controller_1_PutPixelArray(colors, 2);
     CyDelay(1000);
     UART_Start();
     char strEx[7] = "Hello!";
@@ -39,9 +42,11 @@ int main(void)
             {
                 strEx[6] = '\0';
                 uint32 number = strtol(strEx, NULL, 16);
-                WS2812_Controller_1_InsertPixel(number );
+                colors[1] = colors[0];
+                colors[0] = number;
+                WS2812_Controller_1_PutPixelArray(colors, 2);
                 CyDelay(500);
-                sprintf(msgStr, "%d", number);
+                sprintf(msgStr, "%d", (int)number);
                 UART_UartPutCRLF('!');
                 UART_UartPutString(msgStr);
                 UART_UartPutCRLF('#');
